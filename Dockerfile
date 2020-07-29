@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:7
 MAINTAINER "Xristos Zervakis"
 
 # Install Ansible via pip so we get the latest version.
