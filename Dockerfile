@@ -2,7 +2,7 @@ FROM centos:latest
 MAINTAINER "Xristos Zervakis"
 
 # Install Ansible via pip so we get the latest version.
-ENV pip_packages "ansible ansible-lint yamllint molecule molecule-containers"
+ENV ansible_packages "ansible ansible-lint yamllint molecule molecule-containers"
 
 RUN yum -y update \
     & yum -y install rpm centos-release \
