@@ -1,0 +1,20 @@
+---
+services: docker
+
+before_install:
+  # Install docker.
+  - sudo apt-get update
+  - sudo apt-get -y install docker
+
+script:
+  # Build the image.
+  - docker build -t docker-ansible .
+
+  # Create the container and give it the name "instance".
+  - docker run --name instance -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-ansible
+
+  # Verify systemd is working.
+  - docker exec --tty instance systemctl list-unit-files --no-pager
+
+  # Verify Ansible is working.
+  - docker exec --tty instance ansible --version
