@@ -1,5 +1,6 @@
 FROM centos:8
-MAINTAINER "Xristos Zervakis"
+LABEL maintainer "Xristos Zervakis"
+
 ENV container=docker
 
 # Install Ansible via pip so we get the latest version.
