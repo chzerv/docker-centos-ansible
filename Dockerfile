@@ -29,7 +29,7 @@ RUN yum -y install rpm centos-release \
       python3-pip \
  && yum clean all
 
-RUN pip3 install $ansible_packages
+RUN pip3 install --no-cache $ansible_packages
 
 RUN mkdir -p /etc/ansible
 
