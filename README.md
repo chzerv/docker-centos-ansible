@@ -1,6 +1,6 @@
 # Container image: CentOS Ansible
 
-[![Build Status](https://travis-ci.com/chzerv/docker-centos-ansible.svg?branch=master)](https://travis-ci.com/chzerv/docker-centos-ansible)
+[![Build Status](https://travis-ci.com/chzerv/docker-centos-ansible.svg?branch=7)](https://travis-ci.com/chzerv/docker-centos-ansible)
 
 This Dockerfile builds a CentOS-based container with Ansible and other Ansible testing tools pre-intalled.
 
