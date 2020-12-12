@@ -4,7 +4,7 @@ LABEL maintainer "Xristos Zervakis"
 ENV container=docker
 
 # Install Ansible via pip so we get the latest version.
-ENV ansible_packages "ansible ansible-lint yamllint molecule molecule-containers"
+ENV ansible_packages "ansible ansible-lint yamllint molecule molecule-docker molecule-podman"
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
