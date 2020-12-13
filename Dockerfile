@@ -18,7 +18,7 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN yum -y install rpm centos-release \
- && yum -y update \
+ && echo "%_netsharedpath /sys:/proc" >> /etc/rpm/macros.dist; yum -y update \
  && yum -y install \
       epel-release \
       initscripts \
