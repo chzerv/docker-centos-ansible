@@ -19,16 +19,25 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        config:
+          - branch: "master"
+            tag: "latest"
+          - branch: '7'
+            tag: '7'
 
     steps:
       - name: Checkout.
         uses: actions/checkout@v2
+        with:
+          ref: ${{ matrix.config.branch }}
 
       - name: Build the image.
-        run: docker build -t docker-ansible .
+        run: docker build -t docker-ansible-${{ matrix.config.tag }} .
 
       - name: Create a container from the built image.
-        run: docker run --name instance -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-ansible
+        run: docker run --name instance -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-ansible-${{ matrix.config.tag }}
 
       - name: Verify systemd is working.
         run: docker exec --tty instance systemctl list-unit-files --no-pager
