@@ -1,5 +1,9 @@
 # CentOS 8 Image for Ansible Testing
 
+>**NOTE**: This image is now  **DEPRECATED**: Use:
+>+ [centos7-systemd-ansible](https://github.com/chzerv/centos7-systemd-ansible)
+>+ [centos8-systemd-ansible](https://github.com/chzerv/centos8-systemd-ansible)
+
 ![Build](https://github.com/chzerv/docker-centos-ansible/workflows/Build/badge.svg?branch=master)
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/chzerv/docker-centos-ansible)
 
